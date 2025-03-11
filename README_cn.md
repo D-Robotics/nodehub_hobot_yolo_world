@@ -1,5 +1,3 @@
-# YOLO-World
-
 
 ## 功能介绍
 
@@ -28,14 +26,6 @@ YOLO-World是一种先进的开放词汇目标检测方法，根据输入文本�
 
 4. 确认PC机能够通过网络访问RDK。
 
-
-### 安装功能包
-```bash
-sudo apt update
-sudo apt install tros-humble-hobot-yolo-world
-```
-
-
 ## 使用介绍
 
 YOLO-World(hobot_yolo_world) package订阅sensor package发布的图片，同时YOLO-World支持根据输入文本变化改变检测类别，其中文本特征来源于本地特征库，通过输入文本查询对应特征，并输入模型推理，经过推理后发布算法msg，通过websocket package实现在PC端浏览器上渲染显示sensor发布的图片和对应的算法结果。
@@ -48,6 +38,11 @@ YOLO-World(hobot_yolo_world) package订阅sensor package发布的图片，同时
 <Tabs groupId="tros-distro">
 
 <TabItem value="humble" label="Humble">
+
+```bash
+# 配置tros.b环境
+source /opt/tros/humble/setup.bash
+```
 
 ```shell
 # 从tros.b的安装路径中拷贝出运行示例需要的配置文件。
@@ -156,7 +151,7 @@ ros2 launch hobot_yolo_world yolo_world.launch.py yolo_world_texts:="red bottle,
 
 在PC端的浏览器输入http://IP:8000 即可查看图像和算法渲染效果（IP为RDK的IP地址）：
 
-![](imgs/render_yolo_world.jpeg)
+![](/../static/img/05_Robot_development/03_boxs/function/image/box_adv/render_yolo_world.jpeg)
 
 
 ## 进阶使用
